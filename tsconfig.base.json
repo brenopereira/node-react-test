@@ -17,7 +17,8 @@
     "paths": {
       "@node-test-fcamara/authenticate": ["libs/authenticate/src/index.ts"],
       "@node-test-fcamara/custom-types": ["libs/custom-types/src/index.ts"],
-      "@node-test-fcamara/database": ["libs/database/src/index.ts"]
+      "@node-test-fcamara/database": ["libs/database/src/index.ts"],
+      "@node-test-fcamara/global": ["libs/global/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
