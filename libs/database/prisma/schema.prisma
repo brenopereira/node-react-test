@@ -1,0 +1,57 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model users {
+  id         Int      @id @default(autoincrement())
+  name       String   @default("")
+  email      String   @unique
+  password   String   @default("")
+  created_at DateTime @default(now())
+  updated_at DateTime @default(now())
+}
+
+model clients {
+  id         Int      @id @default(autoincrement())
+  name       String   @default("")
+  document   String   @default("")
+  birth_date String   @default("")
+  zipcode    String   @default("")
+  street     String   @default("")
+  number     String   @default("")
+  state      String   @default("")
+  city       String   @default("")
+  created_at DateTime @default(now())
+  updated_at DateTime @default(now())
+
+  rents rents[]
+}
+
+model books {
+  id         Int      @id @default(autoincrement())
+  title      String   @default("")
+  author     String   @default("")
+  isbn       String   @default("")
+  copy_code  String   @default("")
+  created_at DateTime @default(now())
+  updated_at DateTime @default(now())
+
+  rents rents[]
+}
+
+model rents {
+  id         Int      @id @default(autoincrement())
+  created_at DateTime @default(now())
+  updated_at DateTime @default(now())
+
+  bookId Int?
+  book   books? @relation(fields: [bookId], references: [id])
+
+  clientId Int?
+  clients  clients? @relation(fields: [clientId], references: [id])
+}

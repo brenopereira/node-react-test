@@ -1,0 +1,11 @@
+version: '2'
+services:
+  db:
+    image: postgres:10.4
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=fcamara
+      - POSTGRES_DB=fcamara
+    ports:
+      - 5432:5432
