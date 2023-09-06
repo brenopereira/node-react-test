@@ -29,24 +29,36 @@ model clients {
 }
 
 model books {
-  id         Int      @id @default(autoincrement())
-  title      String   @default("")
-  author     String   @default("")
-  isbn       String   @default("")
-  copy_code  String   @default("")
+  id     Int    @id @default(autoincrement())
+  title  String @default("")
+  author String @default("")
+
   created_at DateTime @default(now())
   updated_at DateTime @default(now())
 
-  rents rents[]
+  book_copies book_copies[]
+}
+
+model book_copies {
+  id        Int    @id @default(autoincrement())
+  isbn      String @default("")
+  copy_code String @default("")
+
+  bookId Int?
+  book   books?  @relation(fields: [bookId], references: [id])
+  rents  rents[]
 }
 
 model rents {
-  id         Int      @id @default(autoincrement())
+  id       Int     @id @default(autoincrement())
+  returned Boolean @default(false)
+
   created_at DateTime @default(now())
   updated_at DateTime @default(now())
+  expires_at DateTime @default(now())
 
-  bookId Int?
-  book   books? @relation(fields: [bookId], references: [id])
+  copyId Int?
+  copy   book_copies? @relation(fields: [copyId], references: [id])
 
   clientId Int?
   clients  clients? @relation(fields: [clientId], references: [id])
