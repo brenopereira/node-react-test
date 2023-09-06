@@ -54,3 +54,19 @@ No use case da reserva temos duas verificações
 - React
 - Styled-Components
 - Axios
+
+## Rotas no frontend
+
+- http://localhost:4200/signup
+- http://localhost:4200/signin
+- http://localhost:4200/
+- http://localhost:4200/books
+
+## Imagens
+
+![alt text](https://github.com/brenopereira/node-react-test/blob/master/images/login.png?raw=true)
+![alt text](https://github.com/brenopereira/node-react-test/blob/master/images/clients.png?raw=true)
+![alt text](https://github.com/brenopereira/node-react-test/blob/master/images/rent.png?raw=true)
+![alt text](https://github.com/brenopereira/node-react-test/blob/master/images/books.png?raw=true)
+![alt text](https://github.com/brenopereira/node-react-test/blob/master/images/new-book.png?raw=true)
+![alt text](https://github.com/brenopereira/node-react-test/blob/master/images/new-copy.png?raw=true)
