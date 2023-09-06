@@ -49,7 +49,7 @@ No use case da reserva temos duas verificações
 - Não é possível alugar um livro cuja a cópia já esteja alugada
 - Não é possível alugar um livro caso o cliente tenha atrasado 2x a devolução
 
-## Tecnoligia do Frontend
+## Tecnologias do Frontend
 
 - React
 - Styled-Components
