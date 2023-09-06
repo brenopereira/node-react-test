@@ -6,7 +6,9 @@ import {
   Param,
   Post,
   Put,
+  UseGuards,
 } from '@nestjs/common';
+import { AuthGuard } from '@nestjs/passport';
 import { CreateCopy } from '../../../application/use-cases/create-copy';
 import { DeleteCopy } from '../../../application/use-cases/delete-copy';
 import { ListCopy } from '../../../application/use-cases/list-copy';
@@ -16,6 +18,7 @@ import { CreateCopyValidator } from '../validators/create-copy.validator';
 import { UpdateCopyValidator } from '../validators/update-copy.validator';
 
 @Controller('copies')
+@UseGuards(AuthGuard('jwt'))
 export class CopyController {
   constructor(
     private createCopy: CreateCopy,

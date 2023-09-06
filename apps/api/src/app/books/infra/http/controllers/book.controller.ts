@@ -6,7 +6,9 @@ import {
   Param,
   Post,
   Put,
+  UseGuards,
 } from '@nestjs/common';
+import { AuthGuard } from '@nestjs/passport';
 import { CreateBook } from '../../../application/use-cases/create-book';
 import { DeleteBook } from '../../../application/use-cases/delete-book';
 import { ListBook } from '../../../application/use-cases/list-books';
@@ -16,6 +18,7 @@ import { CreateBookValidator } from '../validators/create-book.validator';
 import { UpdateBookValidator } from '../validators/update-book.validator';
 
 @Controller('books')
+@UseGuards(AuthGuard('jwt'))
 export class BookController {
   constructor(
     private createBook: CreateBook,

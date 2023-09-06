@@ -9,7 +9,11 @@ export class PrismaBookRepository implements BookRepository {
   async findAll() {
     return await this.prisma.books.findMany({
       include: {
-        book_copies: true,
+        book_copies: {
+          include: {
+            rents: true,
+          },
+        },
       },
     });
   }
@@ -27,6 +31,17 @@ export class PrismaBookRepository implements BookRepository {
     return await this.prisma.books.findFirst({
       where: {
         id: Number(id),
+      },
+      include: {
+        book_copies: {
+          where: {
+            rents: {
+              every: {
+                returned: true,
+              },
+            },
+          },
+        },
       },
     });
   }

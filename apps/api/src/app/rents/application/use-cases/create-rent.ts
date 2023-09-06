@@ -47,7 +47,7 @@ export class CreateRent {
       return await this.rentRepository.create({
         clientId,
         copyId,
-        expires_at,
+        expires_at: new Date(expires_at),
       });
     }
   }
