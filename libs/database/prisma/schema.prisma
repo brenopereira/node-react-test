@@ -21,11 +21,7 @@ model clients {
   name       String   @default("")
   document   String   @default("")
   birth_date String   @default("")
-  zipcode    String   @default("")
-  street     String   @default("")
-  number     String   @default("")
-  state      String   @default("")
-  city       String   @default("")
+  address    String   @default("")
   created_at DateTime @default(now())
   updated_at DateTime @default(now())
 
