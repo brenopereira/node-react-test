@@ -4,10 +4,10 @@ import { HttpExceptionFilter } from '@node-test-fcamara/global';
 import { AuthModule } from './auth/auth.module';
 import { BooksModule } from './books/books.module';
 import { ClientsModule } from './clients/clients.module';
+import { RentsModule } from './rents/rents.module';
 
 @Module({
-  imports: [AuthModule, BooksModule, ClientsModule],
-  controllers: [],
+  imports: [AuthModule, BooksModule, ClientsModule, RentsModule],
   providers: [
     {
       provide: APP_FILTER,

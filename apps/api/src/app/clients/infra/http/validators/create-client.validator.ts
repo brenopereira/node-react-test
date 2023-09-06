@@ -12,4 +12,10 @@ export class CreateClientValidator {
 
   @IsNotEmpty({ message: 'O endereço é obrigatório' })
   address: string;
+
+  @IsNotEmpty({ message: 'O estado é obrigatório' })
+  state: string;
+
+  @IsNotEmpty({ message: 'A cidade é obrigatória' })
+  city: string;
 }

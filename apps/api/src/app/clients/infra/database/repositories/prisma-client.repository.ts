@@ -16,6 +16,17 @@ export class PrismaClientRepository implements ClientRepository {
       where: {
         id: Number(id),
       },
+      include: {
+        rents: {
+          include: {
+            copy: {
+              include: {
+                book: true,
+              },
+            },
+          },
+        },
+      },
     });
   }
 
@@ -38,13 +49,22 @@ export class PrismaClientRepository implements ClientRepository {
     });
   }
 
-  async create({ name, birth_date, document, address }: ClientParams) {
+  async create({
+    name,
+    birth_date,
+    document,
+    address,
+    city,
+    state,
+  }: ClientParams) {
     return await this.prisma.clients.create({
       data: {
         name,
         birth_date,
         document,
         address,
+        city,
+        state,
       },
     });
   }

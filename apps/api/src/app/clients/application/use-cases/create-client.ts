@@ -5,12 +5,14 @@ import { ClientRepository } from '../repositories/client.repository';
 export class CreateClient {
   constructor(private clientRepository: ClientRepository) {}
 
-  async execute({ name, birth_date, document, address }) {
+  async execute({ name, birth_date, document, address, city, state }) {
     return await this.clientRepository.create({
       name,
       birth_date,
       document,
       address,
+      city,
+      state,
     });
   }
 }

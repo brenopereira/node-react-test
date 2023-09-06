@@ -9,7 +9,6 @@ import { AuthController } from './infra/http/controllers/auth.controller';
 @Module({
   imports: [DatabaseModule, AuthenticateModule, AuthDatabaseModule],
   providers: [SignUp, SignIn],
-  exports: [],
   controllers: [AuthController],
 })
 export class AuthModule {}

@@ -18,7 +18,6 @@ import { ClientController } from './infra/http/controllers/client.controller';
     UpdateClient,
     DeleteClient,
   ],
-  exports: [],
   controllers: [ClientController],
 })
 export class ClientsModule {}

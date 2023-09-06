@@ -3,4 +3,6 @@ export type ClientParams = {
   birth_date: string;
   document: string;
   address: string;
+  city: string;
+  state: string;
 };

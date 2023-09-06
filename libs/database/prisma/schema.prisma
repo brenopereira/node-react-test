@@ -22,6 +22,8 @@ model clients {
   document   String   @default("")
   birth_date String   @default("")
   address    String   @default("")
+  city       String   @default("")
+  state      String   @default("")
   created_at DateTime @default(now())
   updated_at DateTime @default(now())
 
@@ -53,9 +55,10 @@ model rents {
   id       Int     @id @default(autoincrement())
   returned Boolean @default(false)
 
-  created_at DateTime @default(now())
-  updated_at DateTime @default(now())
-  expires_at DateTime @default(now())
+  created_at  DateTime @default(now())
+  updated_at  DateTime @default(now())
+  expires_at  DateTime @default(now())
+  returned_at DateTime @default(now())
 
   copyId Int?
   copy   book_copies? @relation(fields: [copyId], references: [id])
