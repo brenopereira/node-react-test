@@ -27,7 +27,6 @@ const RentModal = ({
 }) => {
   const [data, setData] = useState({
     copyId: '',
-    clientId,
     expires_at: '',
   });
   const [books, setBooks] = useState([]);
@@ -57,7 +56,7 @@ const RentModal = ({
 
   const handleCreateRent = () => {
     api
-      .post('/rents', { ...data })
+      .post('/rents', { ...data, clientId })
       .then(() => {
         alert('Aluguel realizado com sucesso!');
         setShow(false);
