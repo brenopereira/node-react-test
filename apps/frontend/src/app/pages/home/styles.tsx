@@ -58,7 +58,7 @@ export const Logo = styled.img`
 export const ClientContainer = styled.div`
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   grid-auto-rows: max-content;
   gap: 16px;
 
@@ -98,4 +98,44 @@ export const AddClient = styled.div`
   height: 100%;
   font-weight: bold;
   font-size: 24px;
+`;
+
+export const ActionContainer = styled.div`
+  flex-direction: row;
+`;
+
+export const Action = styled.button`
+  background-color: #8c8c8c;
+  padding: 12px;
+  border: none;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  margin-top: 8px;
+  margin-right: 8px;
+`;
+
+export const ActionDelete = styled.button`
+  background-color: #f38989;
+  padding: 12px;
+  border: none;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  margin-top: 8px;
+  margin-right: 8px;
+`;
+
+export const ActionRent = styled.button`
+  background-color: #65b2cb;
+  padding: 12px;
+  border: none;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  margin-top: 8px;
+  margin-right: 8px;
 `;

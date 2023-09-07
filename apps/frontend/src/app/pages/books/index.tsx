@@ -3,6 +3,8 @@ import api from '../../services/api';
 import {
   Action,
   ActionContainer,
+  ActionDelete,
+  ActionRent,
   AddClient,
   Client,
   ClientContainer,
@@ -95,21 +97,22 @@ const Books = () => {
                 </p>
 
                 <ActionContainer>
-                  <Action
+                  <ActionDelete>Excluir</ActionDelete>
+                  <ActionRent
                     onClick={() => {
                       setShowListCopiesModal(true);
                       setCopies(book.book_copies);
                     }}
                   >
                     Visualizar cópias
-                  </Action>
+                  </ActionRent>
                   <Action
                     onClick={() => {
                       setBookId(book.id);
                       setShowCreateCopyModal(true);
                     }}
                   >
-                    Criar uma cópia
+                    Criar cópia
                   </Action>
                 </ActionContainer>
               </Client>

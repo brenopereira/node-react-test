@@ -8,7 +8,19 @@ export class PrismaClientRepository implements ClientRepository {
   constructor(private prisma: PrismaService) {}
 
   async findAll() {
-    return await this.prisma.clients.findMany();
+    return await this.prisma.clients.findMany({
+      include: {
+        rents: {
+          include: {
+            copy: {
+              include: {
+                book: true,
+              },
+            },
+          },
+        },
+      },
+    });
   }
 
   async findById(id: number) {

@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import api from '../../services/api';
 import {
+  Action,
+  ActionContainer,
+  ActionDelete,
+  ActionRent,
   AddClient,
   Client,
   ClientContainer,
@@ -80,12 +84,7 @@ const Home = () => {
               city: string;
               state: string;
             }) => (
-              <Client
-                onClick={() => {
-                  setClientId(client.id);
-                  setShowRentModal(true);
-                }}
-              >
+              <Client>
                 <h1>{client.name}</h1>
                 <p>
                   <strong>Nascimento: </strong>
@@ -103,6 +102,19 @@ const Home = () => {
                   <strong>Localização: </strong>
                   {client.state} - {client.city}
                 </p>
+
+                <ActionContainer>
+                  <ActionDelete>Excluir</ActionDelete>
+                  <ActionRent>Editar</ActionRent>
+                  <Action
+                    onClick={() => {
+                      setClientId(client.id);
+                      setShowRentModal(true);
+                    }}
+                  >
+                    Alugar livro
+                  </Action>
+                </ActionContainer>
               </Client>
             )
           )}
